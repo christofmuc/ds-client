@@ -13,9 +13,12 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+# Why are those set directly instead of the project() function?
 set(CMAKE_PROJECT_VERSION_MAJOR "0")
 set(CMAKE_PROJECT_VERSION_MINOR "1")
 set(CMAKE_PROJECT_VERSION_PATCH "0")
+# This is required by libov
+set(PROJECT_VERSION "${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH}")
 
 
 add_compile_definitions(STAGE_URL="https://single.dstage.org")

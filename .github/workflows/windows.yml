@@ -20,6 +20,16 @@ jobs:
         with:
           version: '5.15.2'
           #arch: 'win64_msvc2017_64'
+          
+      # Don't install boost via VCPKG, that takes about an hour and fills up the disk
+      - name: Install boost
+        uses: MarkusJx/install-boost@v1.0.1
+        id: install-boost
+        with:
+          # REQUIRED: Specify the required boost version
+          # A list of supported versions can be found here: 
+          # https://github.com/actions/boost-versions/blob/main/versions-manifest.json
+          boost_version: 1.71.0
 
       - name: Checkout repository and submodules
         uses: actions/checkout@v2

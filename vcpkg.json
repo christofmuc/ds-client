@@ -9,12 +9,17 @@
         "cpprestsdk",
         "openssl",
         "libsndfile",
+		"libsamplerate",
+		"libxmlpp",
         "jack2",
         "liblo",
         "gtkmm",
         "eigen3",
         "gsl",
         "fftw3",
-        "curl"
+        "curl",
+		"pthreads",
+		"pcre",
+		"dlfcn-win32"
     ]
   }

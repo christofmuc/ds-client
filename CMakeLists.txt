@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16.0)
 
-#set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
+if(WIN32)
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_LIST_DIR}/third_party/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
+endif()
 
 ## GLOBAL CONFIGURATION
 project(DigitalStage LANGUAGES CXX)
@@ -69,7 +71,7 @@ endif()
 #find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(QT NAMES Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
-find_package(Qt5Keychain REQUIRED)
+#find_package(Qt5Keychain REQUIRED)
 find_package(cpprestsdk REQUIRED)
 
 # DEPENDENCIES
